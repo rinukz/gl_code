@@ -1,0 +1,9 @@
+{
+  "licenses": {
+    "ABC-COMPANY": {
+      "machine_id": "A1B2C3D4-...",
+      "expires": "2026-12-31",
+      "active": true
+    }
+  }
+}

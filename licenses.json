@@ -1,9 +1,20 @@
 {
   "licenses": {
-    "ABC-COMPANY": {
+    "ATMA01-PC": {
       "machine_id": "74700cef-f6fc-4daf-97ef-f11ce0fe4558",
-      "expires": "2026-12-31",
+      "expires": "2026-02-31",
+      "active": true
+    },
+    "K-BOIY-PC": {
+      "machine_id": "74700cef-f6fc-4daf-97ef-f11ce0fe4558",
+      "expires": "2026-02-31",
+      "active": true
+    },
+    "POM-PC": {
+      "machine_id": "74700cef-f6fc-4daf-97ef-f11ce0fe4558",
+      "expires": "2026-02-31",
       "active": true
     }
+    
   }
 }

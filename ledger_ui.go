@@ -839,6 +839,13 @@ func getLedgerGUI(w fyne.Window) (fyne.CanvasObject, func()) {
 			return
 		}
 
+		if actionFlag == "EDIT" && isSpecialCode(acCode) {
+			// ดึง AcName เดิมกลับมา (ไม่ให้ user เปลี่ยน)
+			if orig, found := loadLedgerRecord(xlOptions, acCode); found {
+				acName = orig.AcName
+			}
+		}
+
 		if actionFlag == "ADD" {
 			for _, code := range allCodes {
 				if code == acCode {
@@ -953,26 +960,14 @@ func getLedgerGUI(w fyne.Window) (fyne.CanvasObject, func()) {
 			return
 		}
 		if isSpecialCode(enAcCode.Text) {
-			var d dialog.Dialog
-			okBtn := newEnterButton("OK", func() {
-				d.Hide()
-				go func() {
-					time.Sleep(50 * time.Millisecond)
-					fyne.Do(func() { w.Canvas().Focus(enAcCode) })
-				}()
-			})
-			d = dialog.NewCustomWithoutButtons("Error",
-				container.NewVBox(
-					widget.NewLabel("ไม่อนุญาตให้แก้ไข Special Account Code"),
-					container.NewCenter(okBtn),
-				), w)
-			d.Show()
-			go func() {
-				time.Sleep(50 * time.Millisecond)
-				fyne.Do(func() { w.Canvas().Focus(okBtn) })
-			}()
+			// Special code: อนุญาตให้แก้ Last Year เท่านั้น
+			// AcCode และ AcName ห้ามแก้ไข
+			setEditMode(false)
+			enAcName.Disable() // lock AcName ด้วย (special code ห้ามเปลี่ยนชื่อ)
+			w.Canvas().Focus(enBlastyear)
 			return
 		}
+
 		// ── Guard: ตรวจว่า AcCode ถูกใช้ใน Book_items ไหม ──
 		// ถ้ามีการใช้งานอยู่ → แจ้งเตือน แต่ยังให้แก้ได้เฉพาะ AcName (ไม่ใช่ AcCode)
 		// เหตุผล: AcName เปลี่ยนได้ แต่ AcCode เปลี่ยนไม่ได้อยู่แล้ว (Disable ใน EDIT mode)

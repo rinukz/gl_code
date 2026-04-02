@@ -1013,7 +1013,7 @@ func (e *dateEntry) TypedKey(key *fyne.KeyEvent) {
 
 func (e *dateEntry) TypedRune(r rune) {
 	if r < '0' || r > '9' {
-		return // รับแค่ตัวเลข
+		return
 	}
 
 	cur := []rune(e.Text)
@@ -1021,7 +1021,18 @@ func (e *dateEntry) TypedRune(r rune) {
 		cur = []rune("__/__/__")
 	}
 
-	// หา position แรกที่เป็น '_'
+	// ── เพิ่ม: ถ้าไม่มี _ เลย (field เต็ม) → reset แล้วเริ่มพิมพ์ใหม่ ──
+	hasBlank := false
+	for _, c := range cur {
+		if c == '_' {
+			hasBlank = true
+			break
+		}
+	}
+	if !hasBlank {
+		cur = []rune("__/__/__")
+	}
+
 	pos := -1
 	for i, c := range cur {
 		if c == '_' {
@@ -1030,20 +1041,12 @@ func (e *dateEntry) TypedRune(r rune) {
 		}
 	}
 	if pos == -1 {
-		return // เต็มแล้ว
+		return
 	}
 
 	cur[pos] = r
-
-	// ข้าม '/' อัตโนมัติ
-	next := pos + 1
-	for next < len(cur) && cur[next] == '/' {
-		next++
-	}
-
 	e.Entry.SetText(string(cur))
 
-	// ถ้าพิมพ์ครบ 6 หลัก → เรียก onEnter อัตโนมัติ
 	full := true
 	for _, c := range cur {
 		if c == '_' {

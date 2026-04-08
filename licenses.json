@@ -2,7 +2,7 @@
   "licenses": {
     "ATMA01-PC": {
       "machine_id": "74700cef-f6fc-4daf-97ef-f11ce0fe4558",
-      "expires": "2026-12-31",
+      "expires": "2026-03-31",
       "active": true
     },
     "K-BOIY-PC": {
@@ -12,7 +12,7 @@
     },
     "POM-PC": {
       "machine_id": "67ec2599-0a3b-4184-8283-394b01af59bf",
-      "expires": "2026-06-31",
+      "expires": "2026-03-31",
       "active": true
     }
     

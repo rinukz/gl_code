@@ -1,20 +1,19 @@
 {
   "licenses": {
     "ATMA01-PC": {
-      "machine_id": "74700cef-f6fc-4daf-97ef-f11ce0fe4558",
+      "device_code": "678B-AE57-981E-3FE9", 
       "expires": "2026-12-31",
       "active": true
     },
     "K-BOIY-PC": {
-      "machine_id": "acb53bea-bc8e-48dc-bb9c-6625ad0a72c6",
+      "device_code": "X9Y8-Z7W6-V5U4-T3S2",
       "expires": "2026-05-31",
       "active": true
     },
     "POM-PC": {
-      "machine_id": "67ec2599-0a3b-4184-8283-394b01af59bf",
+      "device_code": "M1N2-O3P4-Q5R6-S7T8",
       "expires": "2026-03-31",
       "active": true
     }
-    
   }
 }

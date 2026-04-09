@@ -1,16 +1,16 @@
 {
   "licenses": {
-    "ATMA01-PC": {
+    "RINUKZ": {
       "device_code": "678B-AE57-981E-3FE9", 
       "expires": "2026-12-31",
       "active": true
     },
-    "K-BOIY-PC": {
+    "K-BOIY": {
       "device_code": "X9Y8-Z7W6-V5U4-T3S2",
       "expires": "2026-05-31",
       "active": true
     },
-    "POM-PC": {
+    "POM": {
       "device_code": "M1N2-O3P4-Q5R6-S7T8",
       "expires": "2026-03-31",
       "active": true

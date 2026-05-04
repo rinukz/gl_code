@@ -8,17 +8,19 @@
     },
     "arnonst28@gmail.com": {
       "device_code": "F551-12E1-5EDF-ECDB",
-      "package": "mini",
+      "package": "hybrid_pro",
       "expires": "2026-08-01",
       "active": true
     },
     "arnonst28@gmail.com(REAL)": {
       "device_code": "8C69-2DC5-61FA-7395",
+      "package": "hybrid_pro",
       "expires": "2026-08-01",
       "active": true
     },
     "arnonst28@gmail.com(REAL_2)": {
       "device_code": "B5E0-9302-815D-8019",
+      "package": "hybrid_pro",
       "expires": "2026-08-01",
       "active": true
     },
